@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 const spaceGrotesk = Space_Grotesk({
@@ -24,6 +25,7 @@ export default function RootLayout({
         <main className='max-w-10xl mx-auto'>
           <Navbar />
           {children}
+          <Footer/>
         </main>
       </body>
     </html>
