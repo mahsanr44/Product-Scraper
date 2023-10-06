@@ -5,7 +5,7 @@ import { getAllProducts } from "@/lib/actions";
 import Image from "next/image"
 
 const Home = async () => {
- 
+
   const allProducts = await getAllProducts();
 
   return (
