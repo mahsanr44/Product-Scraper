@@ -6,12 +6,12 @@ import React from 'react'
 interface Props {
   product: Product;
 }
- 
+
 const ProductCard = ({ product }: Props) => {
   return (
     <Link href={`/products/${product._id}`} className="product-card">
       <div className="product-card_img-container">
-        <Image 
+        <Image
           src={product.image}
           alt={product.title}
           width={200}

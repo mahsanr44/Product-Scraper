@@ -10,8 +10,7 @@ const isValidAmazonProductURL = (url: string) => {
 
         if (hostname.includes('amazon.com') ||
             hostname.includes('amazon.') ||
-            hostname.endsWith('amazon'))
-             {
+            hostname.endsWith('amazon')) {
             return true;
         }
 
@@ -26,16 +25,16 @@ const Searchbar = () => {
     const [searchPrompt, setSearchPrompt] = useState('')
     const [isLoading, setIsLoading] = useState(false)
 
-    const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const isValidLink = isValidAmazonProductURL(searchPrompt);
         if (!isValidLink) return alert('Please Provide a Valid Amazon Product Link')
-        
+
         try {
             setIsLoading(true);
 
-            const product= await scrapeAndStoreProduct(searchPrompt);
+            const product = await scrapeAndStoreProduct(searchPrompt);
         } catch (e) {
             console.log(e)
         } finally {
